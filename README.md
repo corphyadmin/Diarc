@@ -7,7 +7,7 @@ una interfaz gráfica amigable, potente y sencilla de utilizar.
 - Descargar Java 10. [Clic aquí](http://www.oracle.com/technetwork/java/javase/downloads/jdk10-downloads-4416644.html).
 
 **Para tener en cuenta**
-- Diarc está desarrollado en Java en su versión 10.
+- Diarc está desarrollado en Java en la versión 10.
 - Para utilizar este software en su computador primero debe instalar Java 10 en su última versión preferiblemente. Si ya tiene instalado
 Java puede omitir esta recomendación.
 - Descargue el archivo comprimido **Diarc-portable.rar** el cual contiene el ejecutable (archivo .jar). No modificar o eliminar los
@@ -22,8 +22,8 @@ las imágenes utilizadas para ilustrar la definición de las palabras. *Antes de
 ## Explorando Diarc
 ![Explorando Diarc](https://github.com/corphyadmin/Diarc/blob/master/Diarc-Vistas/explore_diarc.PNG)
 
-## Nombres de los items del menú
-![Nombres de los items del menú](https://github.com/corphyadmin/Diarc/blob/master/Diarc-Vistas/texto_menu.PNG)
+## Nombre de los items del menú
+![Nombre de los items del menú](https://github.com/corphyadmin/Diarc/blob/master/Diarc-Vistas/texto_menu.PNG)
 
 ## Validar datos de búsqueda ingresados
 ![Validar datos de búsqueda ingresados](https://github.com/corphyadmin/Diarc/blob/master/Diarc-Vistas/validacion.PNG)
