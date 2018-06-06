@@ -10,7 +10,7 @@ una interfaz gráfica amigable, potente y sencilla de utilizar.
 - Diarc está desarrollado en Java en la versión 10.
 - Para utilizar este software en su computador primero debe instalar Java 10 en su última versión preferiblemente. Si ya tiene instalado
 Java puede omitir esta recomendación.
-- Descargue el archivo comprimido **Diarc-portable.rar** el cual contiene el ejecutable (archivo .jar). No modificar o eliminar los
+- Descargue el archivo **Diarc-portable.rar** el cual contiene el ejecutable (archivo .jar). No modificar o eliminar los
 archivos que están adjuntos para garantizar el correcto funcionamiento de la aplicación.
 - Si desea descargar el código fuente el paquete **imagenPalabra** contiene un archivo llamado *imagenPalabra.rar* el cual contiene
 las imágenes utilizadas para ilustrar la definición de las palabras. *Antes de abrir el proyecto con la IDE descomprima este archivo.*
