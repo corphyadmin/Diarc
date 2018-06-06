@@ -1,0 +1,142 @@
+/**
+*                                              ESTILOS - DIARC
+*
+* Este tema contiene los estilos que dan una apariencia llamativa a los componentes de la interfaz gráfica. Si un
+* componente se adiciona a la interfaz gráfica y requiere de estilos específicos se deben escribir en este archivo.
+*
+* Autores:
+*   Luis Guillermo Gómez Galeano
+*   Oscar Javier Gómez Sánchez
+*   Jose Alirio Díaz Suarez
+*
+* Versión 1.0
+*
+*/
+
+/* Estilos de los botones del menú principal */
+.btnMenu:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ----------- Estilos del panel de inicio y explorar Diarc ----------- */
+.startContentPane {
+    -fx-background-image: url("/com/diarc/imagenes/background.jpg");
+}
+
+.exploreDiarcPane {
+    -fx-background-image: url("/com/diarc/imagenes/bg.jpg");
+}
+
+.startContentPane, .exploreDiarcPane {
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+}
+
+/* -------- FIN Estilos del panel de inicio y explorar --------- */
+
+/* Estilos de los paneles con información del inicio */
+.divContentPane {
+    -fx-background-color: rgba(255, 255, 255, 0.5);
+    -fx-background-radius: 7;
+}
+
+/* ------------ Estilos de los labels de los paneles de inicio y los items de los términos sugeridos ------------ */
+.lbContentPane {
+    -fx-background-color: rgba(24, 186, 96, 0.7);
+    -fx-background-radius: 7 7 0 0;
+}
+
+.btnSuggestedTerms {
+    -fx-background-radius: 0;
+}
+
+.btnSuggestedTerms:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* --------- FIN Estilos de los labels de los paneles de inicio y los items de los términos sugeridos --------- */
+
+/* Estilos del Tab */
+.tab-header-background {
+    -fx-background-color: #17758d;
+}
+
+.tab .tab-label {
+    -fx-font-family: "Yu Gothic Medium";
+}
+
+/* -------------------- Estilos de las tablas -------------------- */
+.jfx-tree-table-view {
+    -fx-tree-table-color: rgba(82, 100, 174, 0.6);
+}
+
+/* Estilos de los nombres de las columnas */
+.tree-table-view .column-header .label {
+    -fx-text-fill: #17758d;
+    -fx-font-size: 16;
+}
+
+/* Estilos de columnHeader de la tabla */
+.tree-table-view .column-header,
+.tree-table-view .column-header-background,
+.tree-table-view .column-header-background .filler {
+    -fx-table-cell-border-color: #d9e4f1;
+    -fx-border-width: 0.1;
+    -fx-background-color: #ffffff, -fx-table-cell-border-color;
+}
+
+/* Estilos de las filas */
+.tree-table-view .tree-table-cell {
+    -fx-font-size: 14;
+}
+
+/* Estilos cuando se ha seleccionado una fila */
+.tree-table-view:focused .tree-table-row-cell:selected .tree-table-cell {
+    -fx-text-fill: white;
+}
+
+/* Estilos de icono de ordenamiento de las columnas */
+.tree-table-view .column-header .arrow, .tree-table-view .column-header .sort-order-dot {
+    -fx-background-color: #17758d;
+}
+
+/* Estilos del borde del header de la tabla */
+.tree-table-view .column-header-background {
+    -fx-border-width: 0 0 0 0;
+    -fx-border-color: #F3F3F3;
+}
+
+/* Estilo de scroll del textarea de la definición de la palabra*/
+.textarea .scroll-pane {
+    -fx-border-color: #eee;
+}
+
+/* ------------ Estilos de los scroll de los paneles ------------ */
+.scroll-pane .scroll-bar:horizontal {
+    -fx-pref-height: 12;
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-pref-width: 12;
+}
+
+/* ---------- FIN Estilos de los scroll de los paneles ---------- */
+
+/* ------------------ FIN Estilos de las tablas ------------------ */
+
+/* ------------ Estilos de Acerca de ------------ */
+.btnAbout {
+    -fx-background-color: #296660;
+    -fx-background-radius: 20;
+}
+
+.btnAbout:hover {
+    -fx-background-color: #17758d;
+}
+
+.btnAbout:pressed {
+    -fx-rotate: 7;
+}
+
+/* ---------- FIN Estilos de Acerca de ---------- */

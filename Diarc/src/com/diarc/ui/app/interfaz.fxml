@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<StackPane fx:id="rootStackPane" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.diarc.ui.app.Controller">
+    <children>
+        <AnchorPane fx:id="rootPane">
+            <children>
+                <AnchorPane layoutX="9.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <AnchorPane fx:id="menuPane" prefHeight="60.0" prefWidth="800.0" style="-fx-background-color: #293334;">
+                            <children>
+                                <ImageView fitHeight="51.0" fitWidth="47.0" layoutX="46.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../imagenes/DiarcLogo.png" />
+                                    </image>
+                                </ImageView>
+                                <JFXTextField fx:id="txtSearchWord" focusColor="#17758d" focusTraversable="false" layoutX="143.0" layoutY="10.0" prefHeight="31.0" prefWidth="279.0" promptText="Buscar" style="-fx-text-fill: #eee; -fx-prompt-text-fill: #999;" unFocusColor="#555555">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                </JFXTextField>
+                                <Label fx:id="lbSearchError" focusTraversable="false" graphicTextGap="0.0" layoutX="148.0" layoutY="42.0" prefHeight="17.0" prefWidth="269.0" text="La palabra no existe" textFill="#e04646" visible="false" />
+                                <JFXButton fx:id="btnSearch" cacheShape="false" centerShape="false" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="431.0" layoutY="14.0" onAction="#searchWord" prefHeight="34.0" prefWidth="30.0" ripplerFill="#ffffff1a" scaleShape="false" textFill="WHITE">
+                                    <graphic>
+                                        <ImageView fitHeight="26.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../imagenes/search.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <tooltip>
+                                        <Tooltip text="Buscar">
+                                            <font>
+                                                <Font name="Ebrima" size="12.0" />
+                                            </font>
+                                        </Tooltip>
+                                    </tooltip>
+                                </JFXButton>
+                                <JFXButton fx:id="btnFavorite" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" graphicTextGap="0.0" layoutX="514.0" onAction="#handleButtonAction" prefHeight="60.0" prefWidth="64.0" style="-fx-background-radius: 0;" styleClass="btnMenu" text="Favoritos" textFill="#eeeeee">
+                                    <graphic>
+                                        <ImageView fx:id="imgFavorite" fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../imagenes/favorite.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                    <tooltip>
+                                        <Tooltip text="Favoritos">
+                                            <font>
+                                                <Font name="Ebrima" size="12.0" />
+                                            </font>
+                                        </Tooltip>
+                                    </tooltip>
+                                </JFXButton>
+                                <JFXButton fx:id="btnRandom" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" graphicTextGap="0.0" layoutX="578.0" onAction="#showRandomWord" prefHeight="60.0" prefWidth="64.0" style="-fx-background-radius: 0;" styleClass="btnMenu" text="Aleatorio" textFill="#eeeeee">
+                                    <graphic>
+                                        <ImageView fx:id="imgRandom" fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../imagenes/random.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                    <tooltip>
+                                        <Tooltip text="Palabra aleatoria">
+                                            <font>
+                                                <Font name="Ebrima" size="12.0" />
+                                            </font>
+                                        </Tooltip>
+                                    </tooltip>
+                                </JFXButton>
+                                <JFXButton fx:id="btnList" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" graphicTextGap="0.0" layoutX="642.0" onAction="#handleButtonAction" prefHeight="60.0" prefWidth="64.0" style="-fx-background-radius: 0;" styleClass="btnMenu" text="Lista" textFill="#eeeeee">
+                                    <graphic>
+                                        <ImageView fx:id="imgList" fitHeight="40.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../imagenes/list.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <font>
+                                        <Font size="11.0" />
+                                    </font>
+                                    <tooltip>
+                                        <Tooltip text="Lista de palabras">
+                                            <font>
+                                                <Font name="Ebrima" size="12.0" />
+                                            </font>
+                                        </Tooltip>
+                                    </tooltip>
+                                </JFXButton>
+                                <JFXButton fx:id="btnMenu" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="741.0" layoutY="7.0" onAction="#showMenu" prefHeight="47.0" prefWidth="46.0" style="-fx-background-radius: 0; -fx-background-radius: 50%;" styleClass="btnMenu" text="Button">
+                                    <graphic>
+                                        <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../imagenes/menu.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <tooltip>
+                                        <Tooltip text="Más...">
+                                            <font>
+                                                <Font name="Ebrima" size="12.0" />
+                                            </font>
+                                        </Tooltip>
+                                    </tooltip>
+                                </JFXButton>
+                            </children>
+                            <effect>
+                                <DropShadow height="50.65" radius="17.4125" />
+                            </effect>
+                        </AnchorPane>
+                        <AnchorPane layoutY="60.0" prefHeight="440.0" prefWidth="800.0" styleClass="startContentPane">
+                            <children>
+                                <Label layoutX="263.0" layoutY="31.0" text="Bienvenido a Diarc" textFill="#17758d">
+                                    <font>
+                                        <Font name="Jokerman" size="30.0" />
+                                    </font>
+                                </Label>
+                                <AnchorPane layoutX="252.0" layoutY="110.0" prefHeight="287.0" prefWidth="297.0" styleClass="divContentPane" AnchorPane.topAnchor="110.0">
+                                    <children>
+                                        <Label alignment="CENTER" prefHeight="60.0" prefWidth="297.0" styleClass="lbContentPane" text="Palabras sugeridas" textAlignment="CENTER" textFill="#f9f9f9">
+                                            <font>
+                                                <Font name="Ebrima Bold" size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <JFXButton fx:id="btnWord1" alignment="BASELINE_LEFT" focusTraversable="false" graphicTextGap="5.0" layoutY="77.0" onAction="#showSuggestedWord" prefHeight="30.0" prefWidth="297.0" styleClass="btnSuggestedTerms">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <ImageView fitHeight="47.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../imagenes/item.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <padding>
+                                                <Insets left="15.0" />
+                                            </padding>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <tooltip>
+                                                <Tooltip text="Clic para ver la definición" />
+                                            </tooltip>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnWord2" alignment="BASELINE_LEFT" focusTraversable="false" graphicTextGap="5.0" layoutY="118.0" onAction="#showSuggestedWord" prefHeight="30.0" prefWidth="297.0" styleClass="btnSuggestedTerms">
+                                            <graphic>
+                                                <ImageView fitHeight="47.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../imagenes/item.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets left="15.0" />
+                                            </padding>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <tooltip>
+                                                <Tooltip text="Clic para ver la definición" />
+                                            </tooltip>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnWord3" alignment="BASELINE_LEFT" focusTraversable="false" graphicTextGap="5.0" layoutY="159.0" onAction="#showSuggestedWord" prefHeight="30.0" prefWidth="297.0" styleClass="btnSuggestedTerms">
+                                            <graphic>
+                                                <ImageView fitHeight="47.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../imagenes/item.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets left="15.0" />
+                                            </padding>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <tooltip>
+                                                <Tooltip text="Clic para ver la definición" />
+                                            </tooltip>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnWord4" alignment="BASELINE_LEFT" focusTraversable="false" graphicTextGap="5.0" layoutY="200.0" onAction="#showSuggestedWord" prefHeight="30.0" prefWidth="297.0" styleClass="btnSuggestedTerms">
+                                            <padding>
+                                                <Insets left="15.0" />
+                                            </padding>
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <ImageView fitHeight="47.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../imagenes/item.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <tooltip>
+                                                <Tooltip text="Clic para ver la definición" />
+                                            </tooltip>
+                                        </JFXButton>
+                                        <JFXButton fx:id="btnWord5" alignment="BASELINE_LEFT" focusTraversable="false" graphicTextGap="5.0" layoutY="240.0" onAction="#showSuggestedWord" prefHeight="30.0" prefWidth="297.0" styleClass="btnSuggestedTerms">
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets left="15.0" />
+                                            </padding>
+                                            <graphic>
+                                                <ImageView fitHeight="47.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../imagenes/item.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                            </cursor>
+                                            <tooltip>
+                                                <Tooltip text="Clic para ver la definición" />
+                                            </tooltip>
+                                        </JFXButton>
+                                    </children>
+                                    <effect>
+                                        <DropShadow color="#777777" />
+                                    </effect>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="submenuPane" layoutX="639.0" layoutY="60.0" opacity="0.7" prefHeight="102.0" prefWidth="152.0" style="-fx-background-color: #293334;" visible="false">
+                            <children>
+                                <JFXToggleButton fx:id="tgTextMenu" contentDisplay="RIGHT" focusTraversable="false" onAction="#showTextMenu" prefHeight="50.0" prefWidth="152.0" size="8.0" text="Texto menú" textFill="#cccccc">
+                                    <font>
+                                        <Font name="Ebrima" size="14.0" />
+                                    </font>
+                                </JFXToggleButton>
+                                <JFXButton fx:id="btnExploreDiarc" alignment="BASELINE_LEFT" focusTraversable="false" layoutY="50.0" onAction="#handleButtonAction" prefHeight="28.0" prefWidth="152.0" style="-fx-background-radius: 0;" styleClass="btnMenu" text="Explorar Diarc" textFill="#cccccc">
+                                    <font>
+                                        <Font name="Ebrima" size="14.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <padding>
+                                        <Insets left="17.0" />
+                                    </padding>
+                                </JFXButton>
+                                <JFXButton fx:id="btnAbout" alignment="BASELINE_LEFT" focusTraversable="false" layoutY="78.0" onAction="#showAbout" prefHeight="28.0" prefWidth="152.0" style="-fx-background-radius: 0;" styleClass="btnMenu" text="Acerca de" textFill="#cccccc">
+                                    <font>
+                                        <Font name="Ebrima" size="14.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <padding>
+                                        <Insets left="17.0" />
+                                    </padding>
+                                </JFXButton>
+                            </children>
+                            <effect>
+                                <DropShadow />
+                            </effect>
+                        </AnchorPane>
+                        <AnchorPane fx:id="exploreDiarcPane" layoutY="60.0" prefHeight="440.0" prefWidth="800.0" styleClass="exploreDiarcPane" visible="false">
+                            <children>
+                                <JFXButton fx:id="btnBack" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" graphicTextGap="0.0" layoutX="9.0" layoutY="8.0" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 50%;">
+                                    <graphic>
+                                        <ImageView fitHeight="37.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../imagenes/back.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <tooltip>
+                                        <Tooltip text="Atrás">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font></Tooltip>
+                                    </tooltip>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </JFXButton>
+                                <AnchorPane layoutX="68.0" layoutY="93.0" prefHeight="254.0" prefWidth="665.0" style="-fx-background-color: rgba(255, 255, 255, 0.5); -fx-background-radius: 7;">
+                                    <children>
+                                        <Label alignment="CENTER" layoutY="6.0" prefHeight="27.0" prefWidth="665.0" text="Explorar Diarc" textFill="#17758d">
+                                            <font>
+                                                <Font name="Jokerman" size="24.0" />
+                                            </font>
+                                        </Label>
+                                        <TextFlow layoutX="12.0" layoutY="48.0" prefHeight="200.0" prefWidth="168.0" textAlignment="CENTER">
+                                            <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Diarc es un catálogo de términos básicos relacionados con la arquitectura del computador, que proporciona su definición y en ciertos casos su imagen o ejemplo. " wrappingWidth="172.01318359375">
+                                                    <font>
+                                                        <Font name="Yu Gothic Light" size="15.0" />
+                                                    </font>
+                                                </Text>
+                                            </children>
+                                        </TextFlow>
+                                        <Separator layoutX="200.0" layoutY="44.0" orientation="VERTICAL" prefHeight="195.0" />
+                                        <AnchorPane layoutX="206.0" layoutY="69.0" prefHeight="145.0" prefWidth="152.0">
+                                            <children>
+                                                <ImageView fitHeight="50.0" fitWidth="60.0" layoutX="51.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../imagenes/dictionary.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Text layoutX="3.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resultados rápidos. Todo en uno" textAlignment="CENTER" wrappingWidth="145.9999975413084">
+                                                    <font>
+                                                        <Font name="Yu Gothic Light" size="14.0" />
+                                                    </font>
+                                                </Text>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane layoutX="358.0" layoutY="69.0" prefHeight="145.0" prefWidth="152.0">
+                                            <children>
+                                                <ImageView fitHeight="60.0" fitWidth="72.0" layoutX="45.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../imagenes/interface.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Text layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Interfaz amigable, potente y sencilla de utilizar" textAlignment="CENTER" wrappingWidth="152.00000904500484">
+                                                    <font>
+                                                        <Font name="Yu Gothic Light" size="14.0" />
+                                                    </font>
+                                                </Text>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane layoutX="511.0" layoutY="69.0" prefHeight="145.0" prefWidth="152.0">
+                                            <children>
+                                                <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="43.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../imagenes/image.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <Text layoutX="-1.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Las imágenes y ejemplos te ayudan a recordar más rápido" textAlignment="CENTER" wrappingWidth="145.99999333918095">
+                                                    <font>
+                                                        <Font name="Yu Gothic Light" size="14.0" />
+                                                    </font>
+                                                </Text>
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="searchPane" layoutX="10.0" layoutY="70.0" prefHeight="440.0" prefWidth="800.0" style="-fx-background-color: #f9f9f9;" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="60.0">
+                            <children>
+                        <ScrollPane hbarPolicy="NEVER" layoutX="2.0" layoutY="8.0" prefHeight="435.0" prefWidth="793.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <AnchorPane prefHeight="434.0" prefWidth="799.0">
+                                 <children>
+                                    <AnchorPane prefHeight="426.0" prefWidth="786.0" AnchorPane.bottomAnchor="-21.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="8.0">
+                                       <children>
+                                                  <JFXButton fx:id="btnBack1" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" graphicTextGap="0.0" onAction="#searchWord" prefHeight="50.0" prefWidth="50.0" ripplerFill="#97d1d6" style="-fx-background-radius: 50%;">
+                                                      <graphic>
+                                                          <ImageView fitHeight="37.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                                              <image>
+                                                                  <Image url="@../../imagenes/back1.png" />
+                                                              </image>
+                                                          </ImageView>
+                                                      </graphic>
+                                                      <tooltip>
+                                                          <Tooltip text="Atrás">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Tooltip>
+                                                      </tooltip>
+                                                      <cursor>
+                                                          <Cursor fx:constant="HAND" />
+                                                      </cursor>
+                                                  </JFXButton>
+                                                  <Label fx:id="lbWord" layoutX="66.0" layoutY="6.0" prefHeight="39.0" prefWidth="665.0" textFill="#17758d">
+                                                      <font>
+                                                          <Font name="Lucida Sans Typewriter Regular" size="24.0" />
+                                                      </font>
+                                                  </Label>
+                                          <JFXButton fx:id="btnAddFavorite" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="684.0" layoutY="5.0" onAction="#addFavorite" prefHeight="31.0" prefWidth="42.0" ripplerFill="#17758d">
+                                             <graphic>
+                                                <ImageView fitHeight="34.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../imagenes/addFavorite.png" />
+                                                   </image>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </ImageView>
+                                             </graphic>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <tooltip>
+                                                <Tooltip text="Agregar a favoritos">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Tooltip>
+                                             </tooltip>
+                                          </JFXButton>
+                                          <Separator layoutX="50.0" layoutY="51.0" prefHeight="4.0" prefWidth="700.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                                          <TextArea fx:id="txtDefinition" editable="false" focusTraversable="false" layoutX="51.0" layoutY="72.0" prefHeight="161.0" prefWidth="686.0" styleClass="textarea" wrapText="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                                             <font>
+                                                <Font name="Nirmala UI" size="15.0" />
+                                             </font>
+                                             <effect>
+                                                <DropShadow color="#cccccc" />
+                                             </effect>
+                                          </TextArea>
+                                                  <ImageView fx:id="imgWord" fitHeight="227.0" fitWidth="384.0" layoutX="53.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+                                                      <effect>
+                                                          <DropShadow color="#999999" />
+                                                      </effect>
+                                                  </ImageView>
+                                          <Label layoutX="399.0" layoutY="517.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="listPane" layoutX="10.0" layoutY="70.0" prefHeight="440.0" prefWidth="800.0" style="-fx-background-color: #edf2f6;" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="60.0">
+                            <children>
+                        <JFXTabPane prefHeight="440.0" prefWidth="800.0">
+                           <tabs>
+                              <Tab text="Generales">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                                  <JFXButton fx:id="btnBack2" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" graphicTextGap="0.0" layoutX="14.0" layoutY="14.0" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="50.0" ripplerFill="#97d1d6" style="-fx-background-radius: 50%;">
+                                                      <graphic>
+                                                          <ImageView fitHeight="37.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                                              <image>
+                                                                  <Image url="@../../imagenes/back1.png" />
+                                                              </image>
+                                                          </ImageView>
+                                                      </graphic>
+                                                      <tooltip>
+                                                          <Tooltip text="Atrás">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font></Tooltip>
+                                                      </tooltip>
+                                                      <cursor>
+                                                          <Cursor fx:constant="HAND" />
+                                                      </cursor>
+                                                  </JFXButton>
+                                          <JFXTreeTableView fx:id="tableViewGeneral" layoutX="43.0" layoutY="76.0" prefHeight="314.0" prefWidth="700.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                                             <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy></JFXTreeTableView>
+                                          <JFXTextField fx:id="inputFilterGeneral" layoutX="512.0" layoutY="24.0" prefHeight="25.0" prefWidth="214.0" promptText="Filtrar..." unFocusColor="#888888">
+                                             <font>
+                                                <Font name="Ebrima" size="15.0" />
+                                             </font>
+                                          </JFXTextField>
+                                          <JFXButton fx:id="btnShowDefGeneral" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="439.0" layoutY="23.0" onAction="#getSelectionWord" prefHeight="30.0" prefWidth="42.0" ripplerFill="#aaaaaa" style="-fx-background-color: #ddd;" text="Ver Definición" textFill="WHITE">
+                                             <font>
+                                                <Font name="Yu Gothic Regular" size="14.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../imagenes/wordView.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Ver definición de la palabra seleccionada" />
+                                             </tooltip>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Instrucciones Assembler">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <JFXButton fx:id="btnBack3" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" graphicTextGap="0.0" layoutX="14.0" layoutY="14.0" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="50.0" ripplerFill="#97d1d6" style="-fx-background-radius: 50%;">
+                                             <graphic>
+                                                <ImageView fitHeight="37.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../imagenes/back1.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Atrás">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Tooltip>
+                                             </tooltip>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </JFXButton>
+                                          <JFXTreeTableView fx:id="tableViewAssembler" layoutX="43.0" layoutY="76.0" prefHeight="314.0" prefWidth="700.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                                             <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </JFXTreeTableView>
+                                          <JFXTextField fx:id="inputFilterAssembler" layoutX="515.0" layoutY="24.0" prefHeight="25.0" prefWidth="214.0" promptText="Filtrar..." unFocusColor="#888888">
+                                             <font>
+                                                <Font name="Ebrima" size="15.0" />
+                                             </font>
+                                          </JFXTextField>
+                                          <JFXButton fx:id="btnShowDefAssembler" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="447.0" layoutY="24.0" onAction="#getSelectionWord" prefHeight="30.0" prefWidth="42.0" ripplerFill="#aaaaaa" style="-fx-background-color: #ddd;" text="Ver Definición" textFill="WHITE" AnchorPane.rightAnchor="316.0">
+                                             <font>
+                                                <Font name="Yu Gothic Regular" size="14.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../imagenes/wordView.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Ver definición de la palabra seleccionada" />
+                                             </tooltip>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab text="Interrupciones CPU">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <JFXButton fx:id="btnBack31" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" graphicTextGap="0.0" layoutX="14.0" layoutY="14.0" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="50.0" ripplerFill="#97d1d6" style="-fx-background-radius: 50%;">
+                                             <graphic>
+                                                <ImageView fitHeight="37.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../imagenes/back1.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Atrás">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Tooltip>
+                                             </tooltip>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </JFXButton>
+                                          <JFXTreeTableView fx:id="tableViewAssembler1" layoutX="43.0" layoutY="76.0" prefHeight="314.0" prefWidth="700.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                                             <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </JFXTreeTableView>
+                                          <JFXTextField fx:id="inputFilterAssembler1" layoutX="515.0" layoutY="24.0" prefHeight="25.0" prefWidth="214.0" promptText="Filtrar..." unFocusColor="#888888">
+                                             <font>
+                                                <Font name="Ebrima" size="15.0" />
+                                             </font>
+                                          </JFXTextField>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <JFXButton fx:id="btnBack4" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" graphicTextGap="0.0" layoutX="14.0" layoutY="14.0" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="50.0" ripplerFill="#97d1d6" style="-fx-background-radius: 50%;">
+                                             <graphic>
+                                                <ImageView fitHeight="37.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../imagenes/back1.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Atrás">
+                                                   <font>
+                                                      <Font size="13.0" />
+                                                   </font>
+                                                </Tooltip>
+                                             </tooltip>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                          </JFXButton>
+                                          <JFXTreeTableView fx:id="tableViewCpu" layoutX="43.0" layoutY="76.0" prefHeight="314.0" prefWidth="700.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                                             <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </JFXTreeTableView>
+                                          <JFXTextField fx:id="inputFilterCpu" layoutX="515.0" layoutY="24.0" prefHeight="25.0" prefWidth="214.0" promptText="Filtrar..." unFocusColor="#888888">
+                                             <font>
+                                                <Font name="Ebrima" size="15.0" />
+                                             </font>
+                                          </JFXTextField>
+                                          <JFXButton fx:id="btnShowDefCpu" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="445.0" layoutY="22.0" onAction="#getSelectionWord" prefHeight="30.0" prefWidth="42.0" ripplerFill="#aaaaaa" style="-fx-background-color: #ddd;" text="Ver Definición" textFill="WHITE" AnchorPane.rightAnchor="316.0">
+                                             <font>
+                                                <Font name="Yu Gothic Regular" size="14.0" />
+                                             </font>
+                                             <cursor>
+                                                <Cursor fx:constant="HAND" />
+                                             </cursor>
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../imagenes/wordView.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Ver definición de la palabra seleccionada" />
+                                             </tooltip>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </JFXTabPane>
+                            </children>
+                        </AnchorPane>
+                  <AnchorPane fx:id="favoritePane" layoutX="10.0" layoutY="70.0" prefHeight="440.0" prefWidth="800.0" style="-fx-background-color: #edf2f6;" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="60.0">
+                     <children>
+                        <JFXButton fx:id="btnBack5" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" graphicTextGap="0.0" layoutX="14.0" layoutY="14.0" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="50.0" ripplerFill="#97d1d6" style="-fx-background-radius: 50%;" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                           <graphic>
+                              <ImageView fitHeight="37.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../imagenes/back1.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Atrás">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXTreeTableView fx:id="tableViewFavorites" layoutX="56.0" layoutY="98.0" prefHeight="314.0" prefWidth="700.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                           <columnResizePolicy>
+                              <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </JFXTreeTableView>
+                        <JFXTextField fx:id="inputFilterFavorites" layoutX="530.0" layoutY="50.0" prefHeight="25.0" prefWidth="214.0" promptText="Filtrar..." unFocusColor="#888888" AnchorPane.rightAnchor="74.0">
+                           <font>
+                              <Font name="Ebrima" size="15.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="btnShowDefFavorites" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="434.0" layoutY="48.0" onAction="#getSelectionWord" prefHeight="35.0" prefWidth="45.0" ripplerFill="#aaaaaa" style="-fx-background-color: #ddd;" text="Ver Definición" textFill="WHITE">
+                           <font>
+                              <Font name="Yu Gothic Regular" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../imagenes/wordView.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Ver definición de la palabra seleccionada" />
+                           </tooltip>
+                        </JFXButton>
+                        <JFXButton fx:id="btnDeleteFavorite" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" layoutX="378.0" layoutY="48.0" onAction="#getSelectionWord" prefHeight="30.0" prefWidth="42.0" ripplerFill="#aaaaaa" style="-fx-background-color: #ddd;" text="Ver Definición" textFill="WHITE">
+                           <font>
+                              <Font name="Yu Gothic Regular" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../imagenes/deleteFavorite.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="Eliminar Favorito" />
+                           </tooltip>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

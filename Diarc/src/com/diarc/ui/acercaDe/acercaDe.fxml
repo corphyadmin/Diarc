@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="234.0" prefWidth="410.0" style="-fx-background-color: #293334;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.diarc.ui.acercaDe.AboutController">
+   <children>
+      <Label layoutX="14.0" text="Diarc" textFill="WHITE">
+         <font>
+            <Font name="Jokerman" size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="89.0" layoutY="27.0" text="2018-1" textFill="WHITE">
+         <font>
+            <Font name="Jokerman" size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="58.0" text="Jose Alirio Díaz Suarez" textFill="WHITE">
+         <font>
+            <Font name="Ebrima" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="84.0" text="Oscar Javier Gómez Sánchez" textFill="WHITE">
+         <font>
+            <Font name="Ebrima" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="110.0" text="Luis Guillermo Gómez Galeano" textFill="WHITE">
+         <font>
+            <Font name="Ebrima" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="11.0" layoutY="210.0" text="© 2018 Diarc. Todos los derechos reservados." textFill="WHITE">
+         <font>
+            <Font name="Yu Gothic Regular" size="11.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="119.0" fitWidth="138.0" layoutX="259.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../imagenes/DiarLogo1.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="14.0" layoutY="152.0" onAction="#loadGitHub" prefHeight="25.0" prefWidth="138.0" styleClass="btnAbout" stylesheets="@../../estilos/estilos.css" text="Más información" textFill="#cccccc">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <tooltip>
+            <Tooltip text="Más información">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Tooltip>
+         </tooltip>
+      </JFXButton>
+   </children>
+</AnchorPane>
